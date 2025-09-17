@@ -1,0 +1,153 @@
+/* Reset */
+* { margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif; 
+}
+
+/* Full-page background (no image) */
+body {
+  height: 100vh;
+  color: #fff;
+  position: relative;
+
+  /* soft forest/teal gradient */
+  background:
+    url("../images/landscape-5359998.jpg") no-repeat center center fixed;
+}
+
+
+/* Optional dark veil over the whole page */
+.overlay { 
+    position: absolute; 
+    inset: 0; 
+    background: rgba(0,0,0,0.25); 
+}
+
+/* Header */
+.site-header { 
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+    right: 20px; 
+    z-index: 2; 
+}
+.logo img { 
+     width: 100px;
+     height: 100px; 
+     border-radius: 70%; 
+    }
+.login-btn {
+  font-size: 35px; 
+  font-style: italic; 
+  position: absolute; 
+  top: 0; 
+  right: 0;
+  padding: 8px 20px; 
+  border: none; 
+  border-radius: 5px;
+  background: #292929; color: #fff; 
+  font-weight: 700; 
+  cursor:pointer;
+}
+
+/* Main layout */
+.continer { 
+    position: relative; 
+    z-index: 2; 
+    width: 100%; 
+    padding: 20px; 
+    text-align: center; 
+}
+
+/* Quote strip  */
+.quote-banner {
+  position: relative;
+  width: 100%;
+  padding: 48px 20px 56px;
+  margin-top: clamp(120px, 28vh, 260px);
+  color: #fff;
+  /* dark band with subtle fade */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.65) 55%, rgba(0,0,0,0.75));
+}
+
+/* thin aqua line  */
+.quote-banner::before {
+  content: "";
+  position: absolute; left: 0; right: 0; top: 0; height: 2px;
+}
+
+.quote-content { 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+/* Quote styling */
+.quote {
+  font-family: "Tagesschrift", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
+
+  font-size: clamp(28px, 4.2vw, 48px);
+  
+  line-height: 1.25;
+}
+
+/* small aqua underline accent */
+.accent {
+  width: 140px; 
+  height: 5px; 
+  margin: 14px auto 10px;
+  background: #37d8ff; border-radius: 3px;
+}
+
+.author { 
+    font-size: 14px; 
+    color: #d9d9d9; 
+}
+
+/* get-start button */
+.get-started {
+  background-color:#292929 ;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 35px;
+   
+  margin: 24px auto 0;
+  padding: 10px 25px;
+  border:#D8D2D2;
+  border-radius: 10px;
+  
+  color:#FFFFFF;
+  font-weight: 2000;
+  cursor:pointer;
+}
+
+/* Footer */
+.footer { 
+    position: absolute; 
+    bottom: 15px; 
+    left: 20px; 
+    z-index: 2; 
+    font-size: 13px; 
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;                /* space between text and icon */
+  align-items: flex-start;
+}
+.footer strong { 
+    font-weight: 700; 
+}
+ .mail-icon{
+  width: 18px;
+  height: 18px;
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .logo img { width: 64px; height: 64px; }
+  .quote-banner { padding: 40px 16px 48px; }
+}
