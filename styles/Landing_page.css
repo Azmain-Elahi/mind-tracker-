@@ -5,7 +5,7 @@
     font-family: Arial, sans-serif; 
 }
 
-/* Full-page background (no image) */
+/* Full-page background  */
 body {
   height: 100vh;
   color: #fff;
@@ -15,6 +15,44 @@ body {
   background:
     url("../images/landscape-5359998.jpg") no-repeat center center fixed;
 }
+/* container bar */
+.moving-heading{
+  height: 34px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #0000008e;
+  color: #fff;
+  border-top: 2px solid #D8D2D2;
+  border-bottom: 2px solid #37d8ff;
+
+  --speed: 20s;          /* make it slower/faster */
+}
+
+/* the line that moves */
+.moving-text{
+  white-space: nowrap;          /* keep it on one line */
+  will-change: transform;       /* smoother on GPU */
+  animation: move-left var(--speed) linear infinite;
+  padding-left: 100%;           /* start just off the right edge */
+}
+
+/* slide completely across the screen */
+@keyframes move-left{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+/* pause when user hovers (optional) */
+.moving-heading:hover .moving-text{
+  animation-play-state: paused;
+}
+
+/* respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .moving-text{ animation: none; }
+}
+
 
 
 /* Optional dark veil over the whole page */
